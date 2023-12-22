@@ -1,0 +1,4 @@
+- 一个Block内的线程一定会在同一个SM（Streaming Multiprocessor，注意不是后面经常提到的Shared Memory）内，一个SM可以运行多个Block。
+- 每一个block内的thread会以warp为单位进行运算，一个warp对应一条指令流，一个warp内的thread是真正同步的.
+- shared memory 只能由单个块内的线程访问, 是一种跨线程共享数据的方式
+- 同一个warp（线程束）里面用的是lock-step的方式实现的每一步的指令一致
